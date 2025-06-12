@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mfe-shell';
+
+
+  sendEvent(): void {
+    
+    const event = new CustomEvent('event', {
+      detail: {
+        message: 'Hello from shell'
+      }
+    });
+    window.dispatchEvent(event);
+  }
 }
