@@ -2,8 +2,10 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
 
-  remotes: {
-    "cadastro": "http://localhost:4201/remoteEntry.js",    
+  name: 'cadastro',
+
+  exposes: {
+    "./Module": "./src/app/app.module.ts",
   },
 
   shared: {
