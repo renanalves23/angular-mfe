@@ -4,11 +4,20 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 
 const APP_ROUTES: Routes = [
   {
-    path: 'cadastro',
+    path: '',
     loadChildren: () =>
       loadRemoteModule({
         type: 'module',
         remoteEntry: 'http://localhost:4201/remoteEntry.js',
+        exposedModule: './Module',
+      }).then((m) => m.AppModule),
+  },
+  {
+    path: 'sucesso',
+    loadChildren: () =>
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:4202/remoteEntry.js',
         exposedModule: './Module',
       }).then((m) => m.AppModule),
   },
