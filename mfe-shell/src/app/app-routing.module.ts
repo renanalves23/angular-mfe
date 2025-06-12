@@ -1,30 +1,11 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { loadRemoteModule } from '@angular-architects/module-federation';
+import { RouterModule } from '@angular/router';
+import { SHELL_ROUTES } from 'src/routes/shell.routes';
 
-const APP_ROUTES: Routes = [
-  {
-    path: '',
-    loadChildren: () =>
-      loadRemoteModule({
-        type: 'module',
-        remoteEntry: 'http://localhost:4201/remoteEntry.js',
-        exposedModule: './Module',
-      }).then((m) => m.AppModule),
-  },
-  {
-    path: 'sucesso',
-    loadChildren: () =>
-      loadRemoteModule({
-        type: 'module',
-        remoteEntry: 'http://localhost:4202/remoteEntry.js',
-        exposedModule: './Module',
-      }).then((m) => m.AppModule),
-  },
-];
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(APP_ROUTES)],
+  imports: [RouterModule.forRoot(SHELL_ROUTES)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
