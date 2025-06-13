@@ -1,35 +1,63 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { BehaviorSubject } from 'rxjs';
+import { UserModel } from 'src/models/user/user.model';
+import { ComponentsModule } from 'src/components/components.module';
+import { CommonModule } from '@angular/common';
+import { AppRoutingModule } from './app-routing.module';
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+
+  let mockUserSubject: BehaviorSubject<UserModel | null>;
+
   beforeEach(async () => {
+     mockUserSubject = new BehaviorSubject<UserModel | null>(null);
+
+     (window as any).sharedDataService = {
+      user$: mockUserSubject.asObservable()
+    };
+
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        CommonModule,
+        AppRoutingModule,
+        ComponentsModule,
       ],
       declarations: [
         AppComponent
       ],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+  });
+
+  afterEach(() => {
+    
+    delete (window as any).sharedDataService;
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'mfe-sucesso'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('mfe-sucesso');
-  });
+  it('should set userName and userEmail on user emission', () => {
+    const mockUser: UserModel = { name: 'John Doe', email: 'john@example.com' } as UserModel;
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('mfe-sucesso app is running!');
+    component.ngOnInit();
+    mockUserSubject.next(mockUser);
+
+    expect(component.userName).toBe('John Doe');
+    expect(component.userEmail).toBe('john@example.com');
+  });  
+
+  it('should unsubscribe on destroy', () => {
+    const unsubscribeSpy = spyOn(component['subscription']!, 'unsubscribe');
+
+    component.ngOnDestroy();
+
+    expect(unsubscribeSpy).toHaveBeenCalled();
   });
 });

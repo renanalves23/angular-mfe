@@ -10,12 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mfe-cadastro';
-
   constructor(private fb: FormBuilder,
      private userService: UserService,
      private router: Router) {
-   
   }
 
   submit(user: UserModel): void {
@@ -26,7 +23,6 @@ export class AppComponent {
         },
         error: (err) => console.error('Error creating user:', err),
       });
-    
   }
   
   handleDispatch(user: UserModel): void {
@@ -36,5 +32,4 @@ export class AppComponent {
   handleUserForm(user: UserModel): void {
     this.submit(user);
   }
-
 }

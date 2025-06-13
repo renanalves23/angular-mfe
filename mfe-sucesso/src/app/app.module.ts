@@ -7,7 +7,6 @@ import { ComponentsModule } from 'src/components/components.module';
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     CommonModule,
