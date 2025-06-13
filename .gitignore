@@ -1,0 +1,64 @@
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Node
+/backend/node_modules
+/backend/npm-debug.log
+/backend/yarn-error.log
+
+# Node
+/mfe-cadastro/node_modules
+/mfe-cadastro/npm-debug.log
+/mfe-cadastro/yarn-error.log
+
+
+# Node
+/mfe-sucesso/node_modules
+/mfe-sucesso/npm-debug.log
+/mfe-sucesso/yarn-error.log
+
+# Node
+/mfe-sucesso/node_modules
+/mfe-sucesso/npm-debug.log
+/mfe-sucesso/yarn-error.log
+
+# Node
+/mfe-shell/node_modules
+/mfe-shell/npm-debug.log
+/mfe-shell/yarn-error.log
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# Miscellaneous
+/mfe-shell/.angular/cache
+/mfe-shell/.sass-cache/
+/mfe-shell/connect.lock
+/mfe-shell/coverage
+/mfe-shell/libpeerconnection.log
+/mfe-shell/testem.log
+/mfe-shell/typings
+
+# Miscellaneous
+/mfe-cadastro/.angular/cache
+/mfe-cadastro/.sass-cache/
+/mfe-cadastro/connect.lock
+/mfe-cadastro/coverage
+    /mfe-cadastro/libpeerconnection.log
+/mfe-cadastro/testem.log
+/mfe-cadastro/typings
+
+# Miscellaneous
+/mfe-sucesso/.angular/cache
+/mfe-sucesso/.sass-cache/
+/mfe-sucesso/connect.lock
+/mfe-sucesso/coverage
+/mfe-sucesso/libpeerconnection.log  
