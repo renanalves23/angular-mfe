@@ -1,0 +1,36 @@
+@import '../../colors/itau-colors';
+
+.success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $itau-light-grey;
+}
+
+.success-card {
+  background: white;
+  border: 1px solid $itau-grey;
+  border-left: 8px solid $itau-orange;
+  padding: 2rem 3rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    color: $itau-blue;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .message {
+    font-size: 1.2rem;
+    color: $itau-dark-blue;
+    margin-bottom: 1.5rem;
+  }
+
+  .icon-check {
+    font-size: 2.5rem;
+    color: $itau-orange;
+  }
+}

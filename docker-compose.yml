@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    command: npm run start
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://127.0.0.1:3000/users"]
+    #   interval: 5s
+    #   timeout: 2s
+    #   retries: 5
+
+  mfe-sucesso:
+    build: ./mfe-sucesso
+    container_name: mfe-sucesso
+    ports:
+      - "4201:4201"
+    # depends_on:
+    #   backend:
+    #     condition: service_healthy
+
+  mfe-cadastro:
+    build: ./mfe-cadastro
+    container_name: mfe-cadastro
+    ports:
+      - "4202:4202"
+    depends_on:
+      mfe-sucesso:
+        condition: service_started
+
+  mfe-shell:
+    build: ./mfe-shell
+    container_name: mfe-shell
+    ports:
+      - "4200:4200"
+    depends_on:
+      mfe-cadastro:
+        condition: service_started
