@@ -1,0 +1,100 @@
+@import '../../colors/itau-colors';
+
+
+form {
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 32px auto;
+  padding: 32px;
+  background-color: #fff;
+  border: 1px solid $itau-grey;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 480px) {
+    padding: 24px;
+    margin: 16px;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: $itau-blue;
+  font-size: 16px;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid $itau-grey;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+
+  &.ng-touched.ng-invalid {
+    border-color: $itau-error;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 6px;
+  }
+}
+
+.error {
+  color: $itau-error;
+  font-size: 13.6px;
+  margin-top: 4px;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
+}
+
+button {
+  background-color: $itau-orange;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $itau-orange-hover;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

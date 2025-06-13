@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <section>
+    <fieldset>
+      <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name"
+        [ngClass]="{ 'ng-invalid': name?.invalid, 'ng-touched': name?.touched }" />
+      <small *ngIf="name?.touched && name?.invalid" class="error">
+        <span *ngIf="name?.errors?.['required']">Nome é obrigatório.</span>
+      </small>
+    </fieldset>
+
+    <fieldset>
+      <label for="email">Email:</label>
+      <input id="email" type="email" formControlName="email"
+        [ngClass]="{ 'ng-invalid': email?.invalid, 'ng-touched': email?.touched }" />
+      <small *ngIf="email?.touched && email?.invalid" class="error">
+        <span *ngIf="email?.errors?.['required']">Email é obrigatório</span>
+        <span *ngIf="email?.errors?.['email']">Entre um email válido.</span>
+      </small>
+    </fieldset>
+
+    <div class="button-wrapper">
+      <button type="submit">Submit</button>
+    </div>
+  </section>
+</form>
