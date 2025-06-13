@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedDataService } from 'src/services/store/shared-data.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'mfe-shell';
 
-
-  sendEvent(): void {
-    
-    const event = new CustomEvent('event', {
-      detail: {
-        message: 'Hello from shell'
-      }
-    });
-    window.dispatchEvent(event);
+  constructor(private sharedDataService: SharedDataService) {
+    window.sharedDataService = this.sharedDataService;
   }
+
 }
