@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { SuccessPageComponent } from 'src/pages/success/success-page.component';
 
 const succesRoutes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    component: SuccessPageComponent,
   }
 ];
 
