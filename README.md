@@ -74,3 +74,22 @@ Diagrama de Fluxo da Aplicação:
 
 ![diagram-mfe](https://github.com/user-attachments/assets/a8adddf1-c3fe-4779-9f8b-b020b4e50a79)
 
+## Arquitetura utilizada:
+- Micro frontends (com Module Federation)
+- Feature-based Modular Architecture
+
+Um projeto Micro Frontends com Module Federation + Feature-based Modular Architecture é uma aplicação onde:
+
+Cada feature grande (ex: Cadastro, Sucesso, Dashboard) vira um micro frontend separado (projeto Angular independente, com seu próprio build e deploy).
+
+Cada micro frontend organiza seu código internamente por feature modules, com pastas separadas por componentes, serviços, modelos, etc.
+
+A comunicação entre os MFEs é feita via Module Federation (Webpack), permitindo que o Shell (Host) carregue os MFEs de forma remota e dinâmica, como se fossem partes locais da aplicação.
+
+##  Estrutura de repositórios:
+
+- mfe-shell (host)
+- mfe-cadastro (remote)
+- mfe-sucesso (remote)
+
+
