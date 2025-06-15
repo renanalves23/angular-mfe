@@ -73,8 +73,16 @@ node start-projects.js
 
 ---
 
+
 ## 💬 Observações importantes:
 
 - Caso encontre erros de Node ou dependências, **confira novamente a versão do Node.js**.
 - Verifique se todas as portas necessárias (ex: `4200`, `4201`, `4202`, etc.) estão livres antes de rodar o projeto.
 - Caso queira rodar apenas um projeto isolado, navegue manualmente até a pasta e use o comando `npm start` nela.
+
+
+Diagrama de Fluxo da Aplicação:
+
+
+![diagram-mfe](https://github.com/user-attachments/assets/a8adddf1-c3fe-4779-9f8b-b020b4e50a79)
+
