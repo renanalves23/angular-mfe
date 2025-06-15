@@ -25,19 +25,7 @@ Se não estiver usando nvm, baixe e instale manualmente a versão 16.14.2 do Nod
 
 ---
 
-### 2. Configuração inicial do `.npmrc`
-
-O projeto contém um script chamado **`npmrc`**, que define a versão correta do Node para o ambiente.
-
-**Execute o script para garantir a configuração:**
-
-```bash
-node npmrc
-```
-
----
-
-### 3. Instalação das dependências
+### 2. Instalação das dependências
 
 O projeto é composto por múltiplos workspaces / micro frontends.  
 Para instalar todas as dependências de uma vez, rode o script:
@@ -50,7 +38,7 @@ Esse comando vai navegar por cada workspace do projeto e rodar `npm install` em 
 
 ---
 
-### 4. Rodando o projeto
+### 3. Rodando o projeto
 
 Após a instalação, execute o projeto com:
 
@@ -65,8 +53,8 @@ Esse script vai iniciar todas as aplicações necessárias (como o **Shell** e o
 ## ✅ Resumo rápido dos comandos:
 
 ```bash
+nvm install 16.14.2
 nvm use 16.14.2
-node npmrc
 node install-all.js
 node start-projects.js
 ```
